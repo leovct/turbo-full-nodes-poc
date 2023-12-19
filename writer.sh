@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Bash script that simulates the behavior of appending data to a file at regular intervals.
+# Bash script that simulates the behavior of a full node by appending data to a file at regular intervals.
 # For example, such program would write 1024 bytes each second to file.txt.
 # $ bash writer.sh bytes 1024 1
 

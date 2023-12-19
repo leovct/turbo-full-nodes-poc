@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Bash script that takes snapshots of a volume at regular intervals.
+# Bash script that takes periodic snapshots of a btrfs volume.
 # For example, such program would takes snapshots of the volume test every hour.
 # $ bash snapshoter.sh test 60 snapshots
 
