@@ -28,7 +28,8 @@ echo "- snapshots_path: $snapshots_path"
 # Take periodic (read-only) snapshots.
 while true; do
   timestamp="$(date +'%m_%d_%Y-%H_%M_%S')"
-  sudo btrfs subvolume snapshot -r "$volume_path" "$snapshots_path/$timestamp"
+  size="$(du -sb /data/volumes/test/ | awk '{print $1}')"
+  sudo btrfs subvolume snapshot -r "$volume_path" "$snapshots_path/t$timestamp-s$size"
   echo "Snapshot taken at $timestamp"
 
   sleep $((snapshot_interval_minutes * 60))
