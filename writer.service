@@ -1,0 +1,10 @@
+[Unit]
+Description=Turbo Full Nodes PoC - Writer
+
+[Service]
+ExecStart=writer.sh /data/volumes/test/bytes 1024 1
+WorkingDirectory=/home/ubuntu/turbo-full-nodes-poc
+Restart=always
+
+[Install]
+WantedBy=default.target

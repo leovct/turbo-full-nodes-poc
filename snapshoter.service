@@ -1,0 +1,10 @@
+[Unit]
+Description=Turbo Full Nodes PoC - Snapshoter
+
+[Service]
+ExecStart=snapshoter.sh /data/volumes/test 1 /data/snapshots
+WorkingDirectory=/home/ubuntu/turbo-full-nodes-poc
+Restart=always
+
+[Install]
+WantedBy=default.target

@@ -19,10 +19,17 @@ if [ "$#" -ne 3 ]; then
   exit 1
 fi
 
+# Log parameters on startup.
+echo "Starting writer process"
+echo "- file_path: $file_path"
+echo "- write_size_bytes: $write_size_bytes"
+echo "- write_interval_seconds: $write_interval_seconds"
+
 # Store data to file given the parameters.
 while true; do
   data=$(od -An -N $write_size_bytes /dev/urandom | tr -d ' \n')
   echo "$data" >> "$file_path"
+  echo "Data appended to file"
 
   sleep "$write_interval_seconds"
 done

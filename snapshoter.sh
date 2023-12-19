@@ -19,6 +19,12 @@ if [ "$#" -ne 3 ]; then
   exit 1
 fi
 
+# Log parameters on startup.
+echo "Starting snapshoter process"
+echo "- volume_path: $volume_path"
+echo "- snapshot_interval_minutes: $snapshot_interval_minutes"
+echo "- snapshots_path: $snapshots_path"
+
 # Take periodic snapshots.
 while true; do
   timestamp="$(date +'%m_%d_%Y-%H_%M_%S')"
