@@ -2,10 +2,10 @@
 
 # Bash script to simulate the behavior of appending data to a file at regular intervals.
 # For example, such program would write 1024 bytes each second to file.txt.
-# $ bash script.sh file.txt 1024 1
+# $ bash script.sh bytes 1024 1
 
-# The name of the file to which data will be appended.
-file="$1"
+# The path of the file to which data will be appended.
+data_file_path="$1"
 
 # The size of the data, in bytes, to write in each iteration.
 write_size="$2"
@@ -20,10 +20,8 @@ if [ "$#" -ne 3 ]; then
 fi
 
 # Store data to file given the parameters.
-counter=0
 while true; do
-  ((counter++))
   data=$(od -An -N $write_size /dev/urandom | tr -d ' \n')
-  echo "$data" >> "$file"
+  echo "$data" >> "$data_file_path"
   sleep "$write_interval"
 done
