@@ -2,8 +2,7 @@
 Description=Turbo Full Nodes PoC - Snapshoter
 
 [Service]
-ExecStart=snapshoter.sh /data/volumes/test 1 /data/snapshots
-WorkingDirectory=/home/ubuntu/turbo-full-nodes-poc
+ExecStart=/home/ubuntu/turbo-full-nodes-poc/snapshoter.sh /data/volumes/test 1 /data/snapshots
 Restart=always
 
 [Install]

@@ -2,8 +2,7 @@
 Description=Turbo Full Nodes PoC - Writer
 
 [Service]
-ExecStart=writer.sh /data/volumes/test/bytes 1024 1
-WorkingDirectory=/home/ubuntu/turbo-full-nodes-poc
+ExecStart=/home/ubuntu/turbo-full-nodes-poc/writer.sh /data/volumes/test/bytes 1024 1
 Restart=always
 
 [Install]
