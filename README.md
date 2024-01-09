@@ -107,11 +107,15 @@ $ cd /home/ubuntu \
 - Check the status of the scripts: `sudo systemctl status writer snapshoter`
 - Restart the scripts: `sudo systemctl restart writer snapshoter`
 - Stop the scripts: `sudo systemctl stop writer snapshoter`
+- Get the logs of any script: `journalctl -xfu snapshoter`
 
 #### Data
 
 - Check the size of the data volume: `df -h /data`
 - Clean up: `sudo rm /data/volumes/test/bytes`
+- Create a file of 100Mb: `sudo dd if=/dev/zero of=test.img bs=1024 count=0 seek=$[1024*100]`
+- Create a file of 100GB: `sudo dd if=/dev/zero of=1g.img bs=1 count=0 seek=1G`
+- Get the size of files (in human readable format): `ls -lh .`
 
 #### Snapshots
 
