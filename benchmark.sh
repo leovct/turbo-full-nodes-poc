@@ -2,7 +2,7 @@
 volume=/data/volumes/test2
 snapshots=/data/snapshots
 remote_host=$1 # ubuntu@<ip-remote-host>
-sizes=("10M" "100M" "1G" "10G" "100G" "500G" "1T" "2T")
+sizes=("10M" "100M" "500M" "1G" "2G" "5G" "10G" "50G" "100G" "200G" "500G" "1T" "2T")
 
 # Check input
 if [ "$#" -ne 1 ]; then
