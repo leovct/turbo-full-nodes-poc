@@ -1,7 +1,7 @@
 #!/bin/bash
 volume=/data/volumes/test2
 snapshots=/data/snapshots
-remote_host=ubuntu@ec2-13-38-98-235.eu-west-3.compute.amazonaws.com
+remote_host=$1 # ubuntu@<ip-remote-host>
 sizes=("10M" "100M" "1G" "10G" "100G" "500G" "1T" "2T")
 
 # Clean up
