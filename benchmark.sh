@@ -4,6 +4,13 @@ snapshots=/data/snapshots
 remote_host=$1 # ubuntu@<ip-remote-host>
 sizes=("10M" "100M" "1G" "10G" "100G" "500G" "1T" "2T")
 
+# Check input
+if [ "$#" -ne 1 ]; then
+    echo "Error: Exactly one argument (host@ip) is required. Please provide one and only one argument."
+    exit 1
+fi
+echo "Argument provided: $1"
+
 # Clean up
 sudo rm $volume/*
 sudo btrfs subvolume delete $snapshots/snapshot_test_*
